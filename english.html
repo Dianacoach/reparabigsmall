@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-image: url("background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 900px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 30px 20px 40px;
+        }
+
+        /* LOGO */
+
+        .logo {
+            width: 350px;
+            max-width: 85%;
+            height: auto;
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .service {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            width: 100%;
+
+            text-decoration: none;
+            color: black;
+
+            padding: 10px;
+
+            transition: transform 0.2s ease;
+        }
+
+        .service:hover {
+            transform: scale(1.03);
+        }
+
+        /* CHANGE THIS NUMBER TO MAKE ALL ICONS
+           BIGGER OR SMALLER */
+
+        .service img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+
+            display: block;
+
+            margin-right: 35px;
+        }
+
+        .service-name {
+            font-size: 34px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        /* BACK BUTTON */
+
+        .back {
+            margin-top: 45px;
+            text-align: center;
+        }
+
+        .back img {
+            width: 150px;
+            height: auto;
+        }
+
+        /* PHONE */
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 20px 15px 30px;
+            }
+
+            .logo {
+                width: 300px;
+                max-width: 90%;
+                margin-bottom: 30px;
+            }
+
+            .services {
+                gap: 18px;
+            }
+
+            .service img {
+                width: 115px;
+                height: 115px;
+                margin-right: 20px;
+            }
+
+            .service-name {
+                font-size: 24px;
+            }
+
+            .back {
+                margin-top: 35px;
+            }
+
+            .back img {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- LOGO -->
+
+    <img src="logo.jpg" alt="Business Logo" class="logo">
+
+
+    <!-- SERVICES -->
+
+    <div class="services">
+
+        <!-- PAINT -->
+
+        <a href="paint.html" class="service">
+
+            <img src="paint.jpg" alt="Paint">
+
+            <div class="service-name">
+                Paint Work
+            </div>
+
+        </a>
+
+
+        <!-- SHOWERS AND BATHS -->
+
+        <a href="showers.html" class="service">
+
+            <img src="showers.jpg" alt="Showers and Baths">
+
+            <div class="service-name">
+                Showers & Baths
+            </div>
+
+        </a>
+
+
+        <!-- SINKS TOILETS AND BIDETS -->
+
+        <a href="bathroom.html" class="service">
+
+            <img src="bathroom.jpg" alt="Sinks, Toilets and Bidets">
+
+            <div class="service-name">
+                Sinks, Toilets & Bidets
+            </div>
+
+        </a>
+
+
+        <!-- ELECTRIC WATER HEATERS -->
+
+        <a href="waterheaters.html" class="service">
+
+            <img src="waterheater.jpg" alt="Electric Water Heaters">
+
+            <div class="service-name">
+                Electric Water Heaters
+            </div>
+
+        </a>
+
+
+        <!-- KITCHEN SINKS AND FAUCETS -->
+
+        <a href="kitchensinks.html" class="service">
+
+            <img src="kitchensink.jpg" alt="Kitchen Sinks and Faucets">
+
+            <div class="service-name">
+                Kitchen Sinks & Faucets
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- BACK BUTTON -->
+
+    <div class="back">
+
+        <a href="javascript:history.back()">
+            <img src="back.png" alt="Back">
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
