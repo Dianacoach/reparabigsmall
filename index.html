@@ -1,57 +1,219 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">     
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-<title>Prueba Gratuita | Coaching Respiratorio Internacional</title>
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Información</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 900px;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 30px 20px 25px;
+        }
+
+        /* TOP LOGO */
+
+        .logo {
+            width: 300px;
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin-bottom: 35px;
+        }
+
+        /* INFORMATION */
+
+        .information {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        /* LANGUAGE OPTIONS */
+
+        .languages {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 70px;
+            width: 100%;
+        }
+
+        .language {
+            text-decoration: none;
+            color: black;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            transition: transform 0.2s ease;
+        }
+
+        .language:hover {
+            transform: scale(1.05);
+        }
+
+        .language img {
+            width: 150px;
+            height: auto;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .language-name {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        /* EMAIL */
+
+        .email {
+            margin-top: auto;
+            padding-top: 45px;
+            text-align: center;
+        }
+
+        .email img {
+            width: 75px;
+            height: auto;
+            display: block;
+            margin: 0 auto 8px;
+        }
+
+        .email a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* PHONE */
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 20px 15px 20px;
+            }
+
+            .logo {
+                width: 250px;
+                max-width: 85%;
+                margin-bottom: 25px;
+            }
+
+            .information {
+                font-size: 26px;
+                margin-bottom: 25px;
+            }
+
+            .languages {
+                gap: 30px;
+            }
+
+            .language img {
+                width: 115px;
+                margin-bottom: 12px;
+            }
+
+            .language-name {
+                font-size: 23px;
+            }
+
+            .email {
+                padding-top: 35px;
+            }
+
+            .email img {
+                width: 60px;
+            }
+
+            .email a {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="page">
 
-    <!-- ENCABEZADO -->
-    <div class="header" style="display:flex; align-items:center; justify-content:left; gap:20px; flex-wrap:wrap;">
+        <!-- LOGO -->
+        <img src="logo.png" alt="Business Logo" class="logo">
 
-        <img src="logo.png" alt="Logo de Respiratory Home Coach" style="width:250px;"> &nbsp;&nbsp;&nbsp;&nbsp; 
 
-        <div style="max-width:600px; text-align:left;">
-            <h1><strong>Prueba Gratuita</strong></h1>
-            <h2><strong>Prueba Gratuita de 20 Minutos</strong></h2>
+        <!-- INFORMATION -->
+        <div class="information">
+            Información
+        </div>
+
+
+        <!-- ENGLISH / SPANISH -->
+        <div class="languages">
+
+            <!-- ENGLISH -->
+            <a href="english.html" class="language">
+                <img src="flag.png" alt="English">
+                <div class="language-name">English</div>
+            </a>
+
+
+            <!-- SPANISH -->
+            <a href="spanish.html" class="language">
+                <img src="bandera.png" alt="Español">
+                <div class="language-name">Español</div>
+            </a>
+
+        </div>
+
+
+        <!-- EMAIL -->
+        <div class="email">
+
+            <a href="mailto:jbautistarrt@gmail.com">
+
+                <img src="mail.png" alt="Email">
+
+            </a>
+
         </div>
 
     </div>
 
-
-<ul>
-  <li><strong>Cero Compromiso:</strong> No se requiere tarjeta. No hay cargos automáticos. Usted solo continúa si realmente considera que tiene valor.</li>
-
-  <li><strong>Respuesta Rápida:</strong> Contácteme por WhatsApp o correo electrónico. La mayoría de las respuestas se realizan dentro de una hora (durante horarios laborales).</li> 
-
-  <li><strong>Elija Su Formato:</strong> Dígame cómo prefiere comunicarse — llamada por WhatsApp, videollamada, mensaje de texto o correo electrónico.</li>
-
-  <li><strong>Elija Su Horario:</strong> ¿Necesita ayuda ahora? ¿Prefiere programar para más tarde hoy u otro día? Simplemente dígame qué le resulta más conveniente.</li>
-
-  <li><strong>Identificación Simple:</strong> Envíe su nombre y dos letras (ejemplo: Juan AB).</li>
-
-  <li><strong>Referencia Única:</strong> Si su combinación ya está ocupada, le asignaré una diferente y se la confirmaré (ejemplo: Juan CD).</li>
-
-  <li><strong>Sistema de Identificación Privado:</strong> Recibirá un número de identificación personal para una comunicación segura y organizada (ejemplo: ID: 0101).</li>
-
-</ul>
-<!-- BACK BUTTON -->
-    
-<a href="javascript:history.back()"><CENTER><img src="atras.png" width="150"></CENTER></a>
-    </div>
-   </div>
- 
-    <!-- FOOTER -->
-    <div class="footer">
-      © 2026 Julio Bautista – International Respiratory Coaching
-    </div>
-    <br><br>
 </body>
 </html>
