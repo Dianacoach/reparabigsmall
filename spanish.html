@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px 40px;
+        }
+
+        .logo {
+            width: 350px;
+            max-width: 85%;
+            height: auto;
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        .services {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .service {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .service:hover {
+            transform: scale(1.03);
+        }
+
+        .service img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            display: block;
+            margin-right: 35px;
+        }
+
+        .service-name {
+            font-size: 34px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .back {
+            margin-top: 45px;
+            text-align: center;
+        }
+
+        .back img {
+            width: 150px;
+            height: auto;
+        }
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 20px 15px 30px;
+            }
+
+            .logo {
+                width: 300px;
+                max-width: 90%;
+                margin-bottom: 30px;
+            }
+
+            .services {
+                gap: 18px;
+            }
+
+            .service img {
+                width: 115px;
+                height: 115px;
+                margin-right: 20px;
+            }
+
+            .service-name {
+                font-size: 24px;
+            }
+
+            .back {
+                margin-top: 35px;
+            }
+
+            .back img {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <img src="logo.jpg" alt="Logo de la empresa" class="logo">
+
+    <div class="services">
+
+        <a href="paint.html" class="service">
+            <img src="paint.jpg" alt="Pintura">
+            <div class="service-name">Trabajos de Pintura</div>
+        </a>
+
+        <a href="showers.html" class="service">
+            <img src="showers.jpg" alt="Duchas y Baños">
+            <div class="service-name">Duchas y Baños</div>
+        </a>
+
+        <a href="bathroom.html" class="service">
+            <img src="bathroom.jpg" alt="Lavabos, Inodoros y Bidés">
+            <div class="service-name">Lavabos, Inodoros y Bidés</div>
+        </a>
+
+        <a href="waterheaters.html" class="service">
+            <img src="waterheater.jpg" alt="Termos Eléctricos">
+            <div class="service-name">Termos Eléctricos</div>
+        </a>
+
+        <a href="kitchensinks.html" class="service">
+            <img src="kitchensink.jpg" alt="Fregaderos y Grifos de Cocina">
+            <div class="service-name">Fregaderos y Grifos de Cocina</div>
+        </a>
+
+    </div>
+
+    <div class="back">
+        <a href="javascript:history.back()">
+            <img src="back.png" alt="Atrás">
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
