@@ -6,7 +6,9 @@
     <title>Servicios</title>
 
     <style>
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         html, body {
             margin: 0;
@@ -56,22 +58,22 @@
             align-items: center;
             justify-content: flex-start;
             width: 100%;
-            text-decoration: none;
             color: black;
             padding: 10px;
-            transition: transform 0.2s ease;
         }
 
-        .service:hover {
-            transform: scale(1.03);
-        }
-
-        .service img {
+        .service-image {
             width: 180px;
             height: 180px;
             object-fit: contain;
             display: block;
             margin-right: 35px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .service-image:hover {
+            transform: scale(1.05);
         }
 
         .service-name {
@@ -90,6 +92,45 @@
             height: auto;
         }
 
+        /* FULL-SCREEN IMAGE VIEWER */
+
+        .image-viewer {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.90);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .image-viewer img {
+            max-width: 95%;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .close-viewer {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-viewer:hover {
+            color: #cccccc;
+        }
+
         @media (max-width: 600px) {
 
             .page {
@@ -106,7 +147,11 @@
                 gap: 18px;
             }
 
-            .service img {
+            .service {
+                padding: 8px;
+            }
+
+            .service-image {
                 width: 115px;
                 height: 115px;
                 margin-right: 20px;
@@ -123,6 +168,21 @@
             .back img {
                 width: 120px;
             }
+
+            .close-viewer {
+                top: 10px;
+                right: 18px;
+                font-size: 42px;
+            }
+
+            .image-viewer {
+                padding: 10px;
+            }
+
+            .image-viewer img {
+                max-width: 98%;
+                max-height: 85vh;
+            }
         }
     </style>
 </head>
@@ -135,35 +195,53 @@
 
     <div class="services">
 
-        <a href="paint.html" class="service">
-            <img src="paint.jpg" alt="Pintura">
+        <div class="service">
+            <img src="paint.jpg"
+                 alt="Pintura"
+                 class="service-image"
+                 onclick="enlargeImage(this.src)">
             <div class="service-name">Trabajos de Pintura</div>
-        </a>
+        </div>
 
-        <a href="shower.html" class="service">
-            <img src="shower.jpg" alt="Duchas y Baños">
+        <div class="service">
+            <img src="shower.jpg"
+                 alt="Duchas y Baños"
+                 class="service-image"
+                 onclick="enlargeImage(this.src)">
             <div class="service-name">Duchas y Baños</div>
-        </a>
+        </div>
 
-        <a href="restroom.html" class="service">
-            <img src="bathroom.jpg" alt="Lavabos, Inodoros y Bidés">
+        <div class="service">
+            <img src="bathroom.jpg"
+                 alt="Lavabos, Inodoros y Bidés"
+                 class="service-image"
+                 onclick="enlargeImage(this.src)">
             <div class="service-name">Lavabos, Inodoros y Bidés</div>
-        </a>
+        </div>
 
-        <a href="waterheater.html" class="service">
-            <img src="waterheater.jpg" alt="Termos Eléctricos">
+        <div class="service">
+            <img src="waterheater.jpg"
+                 alt="Termos Eléctricos"
+                 class="service-image"
+                 onclick="enlargeImage(this.src)">
             <div class="service-name">Termos Eléctricos</div>
-        </a>
+        </div>
 
-        <a href="kitchensink.html" class="service">
-            <img src="kitchensink.jpg" alt="Fregaderos y Grifos de Cocina">
+        <div class="service">
+            <img src="kitchensink.jpg"
+                 alt="Fregaderos y Grifos de Cocina"
+                 class="service-image"
+                 onclick="enlargeImage(this.src)">
             <div class="service-name">Fregaderos y Grifos de Cocina</div>
-        </a>
+        </div>
 
-        <a href="cealingfan.html" class="service">
-            <img src="cealingfan.jpg" alt="Ventiladores de Techo">
+        <div class="service">
+            <img src="cealingfan.jpg"
+                 alt="Ventiladores de Techo"
+                 class="service-image"
+                 onclick="enlargeImage(this.src)">
             <div class="service-name">Ventiladores de Techo</div>
-        </a>
+        </div>
 
     </div>
 
@@ -174,6 +252,39 @@
     </div>
 
 </div>
+
+
+<!-- FULL-SCREEN IMAGE VIEWER -->
+
+<div id="imageViewer" class="image-viewer" onclick="closeImage()">
+
+    <span class="close-viewer" onclick="closeImage(event)">×</span>
+
+    <img id="largeImage" src="" alt="Imagen ampliada">
+
+</div>
+
+
+<script>
+
+function enlargeImage(imageSource) {
+    var viewer = document.getElementById("imageViewer");
+    var largeImage = document.getElementById("largeImage");
+
+    largeImage.src = imageSource;
+    viewer.style.display = "flex";
+}
+
+function closeImage(event) {
+
+    if (event) {
+        event.stopPropagation();
+    }
+
+    document.getElementById("imageViewer").style.display = "none";
+}
+
+</script>
 
 </body>
 </html>
