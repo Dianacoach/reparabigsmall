@@ -60,6 +60,7 @@
             width: 100%;
             color: black;
             padding: 10px;
+            cursor: pointer;
         }
 
         .service-image {
@@ -72,7 +73,7 @@
             transition: transform 0.2s ease;
         }
 
-        .service-image:hover {
+        .service:hover .service-image {
             transform: scale(1.05);
         }
 
@@ -80,6 +81,7 @@
             font-size: 34px;
             font-weight: bold;
             text-align: left;
+            cursor: pointer;
         }
 
         .back {
@@ -100,20 +102,20 @@
             z-index: 1000;
             left: 0;
             top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.90);
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 0;
         }
 
-           .image-viewer img {
-           max-width: 100%;
-           max-height: 100vh;
-           width: auto;
-           height: auto;
-           object-fit: contain;
+        .image-viewer img {
+            max-width: 100vw;
+            max-height: 100vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
         }
 
         .close-viewer {
@@ -125,6 +127,7 @@
             font-weight: bold;
             cursor: pointer;
             line-height: 1;
+            z-index: 1001;
         }
 
         .close-viewer:hover {
@@ -176,12 +179,12 @@
             }
 
             .image-viewer {
-                padding: 10px;
+                padding: 0;
             }
 
             .image-viewer img {
-                max-width: 98%;
-                max-height: 85vh;
+                max-width: 100vw;
+                max-height: 100vh;
             }
         }
     </style>
@@ -195,70 +198,46 @@
 
     <div class="services">
 
-        <div class="service">
-            <img src="paint.jpg"
-                 alt="Pintura"
-                 class="service-image"
-                 onclick="enlargeImage(this.src)">
+        <div class="service" onclick="enlargeImage('paint.jpg')">
+            <img src="paint.jpg" alt="Pintura" class="service-image">
             <div class="service-name">Trabajos de Pintura</div>
         </div>
 
-        <div class="service">
-            <img src="shower.jpg"
-                 alt="Duchas y Baños"
-                 class="service-image"
-                 onclick="enlargeImage(this.src)">
+        <div class="service" onclick="enlargeImage('shower.jpg')">
+            <img src="shower.jpg" alt="Duchas y Baños" class="service-image">
             <div class="service-name">Duchas y Baños</div>
         </div>
 
-        <div class="service">
-            <img src="restroom.jpg"
-                 alt="Lavabos, Inodoros y Bidés"
-                 class="service-image"
-                 onclick="enlargeImage(this.src)">
+        <div class="service" onclick="enlargeImage('restroom.jpg')">
+            <img src="restroom.jpg" alt="Lavabos, Inodoros y Bidés" class="service-image">
             <div class="service-name">Lavabos, Inodoros y Bidés</div>
         </div>
 
-        <div class="service">
-            <img src="waterheater.jpg"
-                 alt="Termos Eléctricos"
-                 class="service-image"
-                 onclick="enlargeImage(this.src)">
+        <div class="service" onclick="enlargeImage('waterheater.jpg')">
+            <img src="waterheater.jpg" alt="Termos Eléctricos" class="service-image">
             <div class="service-name">Termos Eléctricos</div>
         </div>
 
-        <div class="service">
-            <img src="kitchensink.jpg"
-                 alt="Fregaderos y Grifos de Cocina"
-                 class="service-image"
-                 onclick="enlargeImage(this.src)">
+        <div class="service" onclick="enlargeImage('kitchensink.jpg')">
+            <img src="kitchensink.jpg" alt="Fregaderos y Grifos de Cocina" class="service-image">
             <div class="service-name">Fregaderos y Grifos de Cocina</div>
         </div>
 
-        <div class="service">
-            <img src="cealingfan.jpg"
-                 alt="Ventiladores de Techo"
-                 class="service-image"
-                 onclick="enlargeImage(this.src)">
+        <div class="service" onclick="enlargeImage('cealingfan.jpg')">
+            <img src="cealingfan.jpg" alt="Ventiladores de Techo" class="service-image">
             <div class="service-name">Ventiladores de Techo</div>
         </div>
 
-<div class="service">
-            <img src="doorfix.jpg"
-                 alt="Arreglos de puertas y ventanas"
-                 class="service-image"
-                 onclick="enlargeImage(this.src)">
+        <div class="service" onclick="enlargeImage('doorfix.jpg')">
+            <img src="doorfix.jpg" alt="Arreglos de puertas y ventanas" class="service-image">
             <div class="service-name">Arreglos de puertas y ventanas</div>
         </div>
-<div class="service">
-            <img src="cabinet.jpg"
-                 alt="Reparación o instalación de muebles de cocina"
-                 class="service-image"
-                 onclick="enlargeImage(this.src)">
+
+        <div class="service" onclick="enlargeImage('cabinet.jpg')">
+            <img src="cabinet.jpg" alt="Reparación o instalación de muebles de cocina" class="service-image">
             <div class="service-name">Reparación o instalación de muebles de cocina</div>
         </div>
 
-        
     </div>
 
     <div class="back">
@@ -269,7 +248,6 @@
 
 </div>
 
-
 <!-- FULL-SCREEN IMAGE VIEWER -->
 
 <div id="imageViewer" class="image-viewer" onclick="closeImage()">
@@ -279,7 +257,6 @@
     <img id="largeImage" src="" alt="Imagen ampliada">
 
 </div>
-
 
 <script>
 
