@@ -250,17 +250,36 @@
 
 </div>
 
-    <!-- BACK BUTTON -->
+<!-- FULL-SCREEN IMAGE VIEWER -->
 
-    <div class="back">
+<div id="imageViewer" class="image-viewer" onclick="closeImage()">
 
-        <a href="javascript:history.back()">
-            <img src="back.png" alt="Back">
-        </a>
+    <span class="close-viewer" onclick="closeImage(event)">×</span>
 
-    </div>
+    <img id="largeImage" src="" alt="Imagen ampliada">
 
 </div>
+
+<script>
+
+function enlargeImage(imageSource) {
+    var viewer = document.getElementById("imageViewer");
+    var largeImage = document.getElementById("largeImage");
+
+    largeImage.src = imageSource;
+    viewer.style.display = "flex";
+}
+
+function closeImage(event) {
+
+    if (event) {
+        event.stopPropagation();
+    }
+
+    document.getElementById("imageViewer").style.display = "none";
+}
+
+</script>
 
 </body>
 </html>
