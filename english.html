@@ -1,10 +1,9 @@
-n<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Services</title>
+    <title>Servicios</title>
 
     <style>
         * {
@@ -20,15 +19,12 @@ n<!DOCTYPE html>
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-
             background-image: url("background.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-
             min-height: 100vh;
-
             display: flex;
             justify-content: center;
         }
@@ -36,15 +32,11 @@ n<!DOCTYPE html>
         .page {
             width: 100%;
             max-width: 900px;
-
             display: flex;
             flex-direction: column;
             align-items: center;
-
             padding: 30px 20px 40px;
         }
-
-        /* LOGO */
 
         .logo {
             width: 350px;
@@ -53,8 +45,6 @@ n<!DOCTYPE html>
             display: block;
             margin-bottom: 40px;
         }
-
-        /* SERVICES */
 
         .services {
             width: 100%;
@@ -67,41 +57,32 @@ n<!DOCTYPE html>
             display: flex;
             align-items: center;
             justify-content: flex-start;
-
             width: 100%;
-
-            text-decoration: none;
             color: black;
-
             padding: 10px;
+            cursor: pointer;
+        }
 
+        .service-image {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            display: block;
+            margin-right: 35px;
+            cursor: pointer;
             transition: transform 0.2s ease;
         }
 
-        .service:hover {
-            transform: scale(1.03);
-        }
-
-        /* CHANGE THIS NUMBER TO MAKE ALL ICONS
-           BIGGER OR SMALLER */
-
-        .service img {
-            width: 180px;
-            height: 180px;
-            object-fit: contain;
-
-            display: block;
-
-            margin-right: 35px;
+        .service:hover .service-image {
+            transform: scale(1.05);
         }
 
         .service-name {
             font-size: 34px;
             font-weight: bold;
             text-align: left;
+            cursor: pointer;
         }
-
-        /* BACK BUTTON */
 
         .back {
             margin-top: 45px;
@@ -113,7 +94,45 @@ n<!DOCTYPE html>
             height: auto;
         }
 
-        /* PHONE */
+        /* FULL-SCREEN IMAGE VIEWER */
+
+        .image-viewer {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+
+        .image-viewer img {
+            max-width: 100vw;
+            max-height: 100vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .close-viewer {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+            z-index: 1001;
+        }
+
+        .close-viewer:hover {
+            color: #cccccc;
+        }
 
         @media (max-width: 600px) {
 
@@ -131,7 +150,11 @@ n<!DOCTYPE html>
                 gap: 18px;
             }
 
-            .service img {
+            .service {
+                padding: 8px;
+            }
+
+            .service-image {
                 width: 115px;
                 height: 115px;
                 margin-right: 20px;
@@ -148,6 +171,21 @@ n<!DOCTYPE html>
             .back img {
                 width: 120px;
             }
+
+            .close-viewer {
+                top: 10px;
+                right: 18px;
+                font-size: 42px;
+            }
+
+            .image-viewer {
+                padding: 0;
+            }
+
+            .image-viewer img {
+                max-width: 100vw;
+                max-height: 100vh;
+            }
         }
     </style>
 </head>
@@ -156,9 +194,8 @@ n<!DOCTYPE html>
 
 <div class="page">
 
-    <!-- LOGO -->
+    <img src="logo.png" alt="Logo de la empresa" class="logo">
 
-    <img src="logo.png" alt="Business Logo" class="logo">
 
 
      <div class="services">
